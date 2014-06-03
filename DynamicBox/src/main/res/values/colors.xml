@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Exceptions colors -->
+    <color name="exception_button_color">#5fcf80</color>
+    <color name="exception_button_color_second">#35c460</color>
+    <color name="exception_title_color">#ff6a7983</color>
+    <color name="exception_message_color">#8c989e</color>
+</resources>

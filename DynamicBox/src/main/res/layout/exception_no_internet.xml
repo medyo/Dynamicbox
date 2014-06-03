@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:gravity="center_vertical|fill_vertical|center_horizontal|fill_horizontal|clip_vertical|clip_horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+        <LinearLayout
+            android:id="@+id/exception_Wrapper"
+            android:layout_width ="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <TextView
+                android:id="@+id/exception_title"
+                style="@style/exception.title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_string" />
+
+            <TextView
+                android:id="@+id/exception_message"
+                style="@style/exception.message"
+                android:text="@string/empty_string" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"
+            android:id="@+id/exception_button"
+            android:layout_below="@+id/exception_Wrapper"
+            style="@style/exception.button"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

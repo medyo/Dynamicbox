@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/saxophone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Empty Collection"
+            android:id="@+id/title"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="could not locale music files"
+            android:id="@+id/description"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/title"
+            android:layout_gravity="center_horizontal"
+            android:textSize="25sp"
+            android:gravity="center_horizontal" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

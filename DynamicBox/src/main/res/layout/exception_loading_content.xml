@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:gravity="center_vertical|fill_vertical|center_horizontal|fill_horizontal|clip_vertical|clip_horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+		
+        <LinearLayout
+            android:id="@+id/exception_Wrapper"
+            android:layout_width ="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" >
+
+            <TextView
+                android:id="@+id/exception_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_string"
+                android:visibility="gone"
+                style="@style/exception.title" />
+
+             <ProgressBar
+            android:id="@+id/exception_progressbar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+             <TextView
+                 android:id="@+id/exception_message"
+                 style="@style/exception.message"
+                 android:text="@string/empty_string" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

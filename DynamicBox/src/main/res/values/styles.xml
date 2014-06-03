@@ -1,0 +1,29 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo"></style>
+    <style name="AppTheme" parent="AppBaseTheme"></style>
+
+    <style name="exception"></style>
+    <style name="exception.title">
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">5dip</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="exception.message">
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">0dip</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="exception.button">
+        <item name="android:layout_marginTop">25dip</item>
+    </style>
+
+</resources>
