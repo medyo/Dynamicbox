@@ -198,9 +198,6 @@ public class DynamicBox {
 
 		return view;
 	}
-    public void setLoadingMessage(String message){
-        ((TextView)mDefaultViews.get(1).findViewById(R.id.exception_message)).setText(message);
-    }
     public void setInternetOffMessage(String message){
         ((TextView)mDefaultViews.get(0).findViewById(R.id.exception_message)).setText(message);
     }
