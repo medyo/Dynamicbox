@@ -14,6 +14,12 @@ import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ViewSwitcher;
 
+/**
+ * 
+ * @author Mehdi Sakout
+ * @author Danny Tsegai
+ *
+ */
 public class DynamicBox {
 
 	private View mTargetView;
