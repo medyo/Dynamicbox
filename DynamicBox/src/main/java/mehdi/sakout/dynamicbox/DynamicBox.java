@@ -14,6 +14,12 @@ import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ViewSwitcher;
 
+/**
+ * 
+ * @author Mehdi Sakout
+ * @author Danny Tsegai
+ *
+ */
 public class DynamicBox {
 
 	private View mTargetView;
@@ -198,7 +204,12 @@ public class DynamicBox {
 
 		return view;
 	}
-    public void setLoadingMessage(String message){
+	/**
+	 * @see <a href="http://developer.android.com/design/building-blocks/progress.html#activity">Android Design Guidelines for Activity Circles</a>
+	 * @deprecated This method has been deprecated because it does not adhere to the Android design guidelines. Activity circle's should not display any text. 
+     *	
+	 */
+	public void setLoadingMessage(String message){
         ((TextView)mDefaultViews.get(1).findViewById(R.id.exception_message)).setText(message);
     }
     public void setInternetOffMessage(String message){
