@@ -15,59 +15,59 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ViewSwitcher;
 
 /**
- * 
+ *
  * @author Mehdi Sakout
  * @author Danny Tsegai
  *
  */
 public class DynamicBox {
 
-	private View mTargetView;
-	private View.OnClickListener mClickListener;
-	private Context mContext;
-	private LayoutInflater mInflater;
-	private RelativeLayout mContainer;
-	private ArrayList<View> mCustomViews;
-	private ArrayList<View> mDefaultViews;
+    private View mTargetView;
+    private View.OnClickListener mClickListener;
+    private Context mContext;
+    private LayoutInflater mInflater;
+    private RelativeLayout mContainer;
+    private ArrayList<View> mCustomViews;
+    private ArrayList<View> mDefaultViews;
     private  ViewSwitcher mSwitcher;
 
     // Default Tags
-	private final String TAG_INTERNET_OFF 	 =  "INTERNET_OFF";
-	private final String TAG_LOADING_CONTENT =  "LOADING_CONTENT";
-	private final String TAG_OTHER_EXCEPTION =  "OTHER_EXCEPTION";
-	
-	// Default Strings
-	private final String MESSAGE_LOADING	 =	"Please wait...";
+    private final String TAG_INTERNET_OFF 	 =  "INTERNET_OFF";
+    private final String TAG_LOADING_CONTENT =  "LOADING_CONTENT";
+    private final String TAG_OTHER_EXCEPTION =  "OTHER_EXCEPTION";
+
+    // Default Strings
+    private final String MESSAGE_LOADING	 =	"";
     private final String TITLE_LOADING	     =	"Loading";
 
-	private final String MESSAGE_NO_INTERNET = "Internet is off, please enable it";
+    private final String MESSAGE_NO_INTERNET = "Internet is off, please enable it";
     private final String TITLE_NO_INTERNET   = "Error";
 
 
-	private final String MESSAGE_FAILURE 	 = "An error has occurred, retry again";
+    private final String MESSAGE_FAILURE 	 = "An error has occurred, retry again";
     private final String TITLE_FAILURE 	     = "Error";
 
     private final String[] mSupportedAbsListViews = new String[]{"listview","gridview","expandablelistView"};
     private final String[] mSupportedViews = new String[]{"linearlayout","relativelayout","scrollview"};
 
-	public DynamicBox(Context context, View targetView){
-		this.mContext 		= context;
-		this.mInflater 		= ((Activity)mContext).getLayoutInflater();
-		this.mTargetView 	= targetView;
-		this.mContainer 	= new RelativeLayout(mContext);
-		this.mCustomViews 	= new ArrayList<View>();
-		this.mDefaultViews	= new ArrayList<View>();
+    public DynamicBox(Context context, View targetView){
+        this.mContext 		= context;
+        this.mInflater 		= ((Activity)mContext).getLayoutInflater();
+        this.mTargetView 	= targetView;
+        this.mContainer 	= new RelativeLayout(mContext);
+        this.mCustomViews 	= new ArrayList<View>();
+        this.mDefaultViews	= new ArrayList<View>();
 
         String type = mTargetView.getClass().getName().substring(mTargetView.getClass().getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
 
-		if(Arrays.asList(mSupportedAbsListViews).contains(type))
+        if(Arrays.asList(mSupportedAbsListViews).contains(type))
             initializeAbsListView();
-		else if(Arrays.asList(mSupportedViews).contains(type))
+        else if(Arrays.asList(mSupportedViews).contains(type))
             initializeViewContainer();
         else
-		    throw new IllegalArgumentException("TargetView type is not supported !");
+            throw new IllegalArgumentException("TargetView type is not supported !");
 
-	}
+    }
 
     public DynamicBox(Context context,int viewID){
         this.mContext 		= context;
@@ -93,15 +93,29 @@ public class DynamicBox {
         setDefaultViews();
 
         mSwitcher = new ViewSwitcher(mContext);
-        ViewSwitcher.LayoutParams params = new ViewSwitcher.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        ViewSwitcher.LayoutParams params = new ViewSwitcher.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         mSwitcher.setLayoutParams(params);
 
-        mSwitcher.addView(mContainer,0);
-        mSwitcher.addView(mTargetView,1);
+        ViewGroup group = (ViewGroup)mTargetView.getParent();
+        int index = 0;
+        Clonner target= new Clonner(mTargetView);
+        if(group!=null){
+            index = group.indexOfChild(mTargetView);
+            group.removeView(mTargetView);
 
+        }
+
+        mSwitcher.addView(mContainer,0);
+        mSwitcher.addView(target.getmView(),1);
         mSwitcher.setDisplayedChild(1);
 
-        ((Activity)mContext).setContentView(mSwitcher);
+        if(group!=null){
+            group.addView(mSwitcher,index);
+        }else{
+            ((Activity)mContext).setContentView(mSwitcher);
+        }
+
+
     }
 
     private void setDefaultViews(){
@@ -132,31 +146,31 @@ public class DynamicBox {
         mContainer.addView(mLayoutOther);
     }
 
-	private void initializeAbsListView(){
+    private void initializeAbsListView(){
 
         setDefaultViews();
 
         AbsListView abslistview = (AbsListView)mTargetView;
         abslistview.setVisibility(View.GONE);
-		ViewGroup parent = (ViewGroup) abslistview.getParent();
+        ViewGroup parent = (ViewGroup) abslistview.getParent();
         if(mContainer!=null){
             parent.addView(mContainer);
             abslistview.setEmptyView(mContainer);
         }else
             throw new IllegalArgumentException("mContainer is null !");
 
-	}
-	
-	public void showLoadingLayout(){
-		show(TAG_LOADING_CONTENT);
-	}
-	public void showInternetOffLayout(){
-		show(TAG_INTERNET_OFF);
-	}
-	public void showExceptionLayout(){
-		show(TAG_OTHER_EXCEPTION);
-	}
-	public void showCustomView(String tag){
+    }
+
+    public void showLoadingLayout(){
+        show(TAG_LOADING_CONTENT);
+    }
+    public void showInternetOffLayout(){
+        show(TAG_INTERNET_OFF);
+    }
+    public void showExceptionLayout(){
+        show(TAG_OTHER_EXCEPTION);
+    }
+    public void showCustomView(String tag){
         show(tag);
     }
 
@@ -166,50 +180,51 @@ public class DynamicBox {
         for(View view : views){
             view.setVisibility(View.GONE);
         }
-        if(mSwitcher!=null && mSwitcher.getDisplayedChild()!=1){
+        if(mSwitcher!=null){
             mSwitcher.setDisplayedChild(1);
         }
     }
-	private void show(String tag){
+    private void show(String tag){
         ArrayList<View> views =  new ArrayList<View>(mDefaultViews);
         views.addAll(mCustomViews);
-		for(View view : views){
-			if(view.getTag()!=null && view.getTag().toString().equals(tag)){
-				view.setVisibility(View.VISIBLE);
-			}else{
-				view.setVisibility(View.GONE);
-			}
-		}
+        for(View view : views){
+            if(view.getTag()!=null && view.getTag().toString().equals(tag)){
+                view.setVisibility(View.VISIBLE);
+            }else{
+                view.setVisibility(View.GONE);
+            }
+        }
         if(mSwitcher!=null && mSwitcher.getDisplayedChild()!=0){
             mSwitcher.setDisplayedChild(0);
         }
-	}
-	/**
-	 * Return a view based on layout id
-	 * @param layout Layout Id
-	 * @param tag Layout Tag
-	 * @return View
-	 */
-	private View initView(int layout, String tag, String title, String description){
-		View view = mInflater.inflate(layout, null,false);
+    }
+    /**
+     * Return a view based on layout id
+     * @param layout Layout Id
+     * @param tag Layout Tag
+     * @return View
+     */
+    private View initView(int layout, String tag, String title, String description){
+        View view = mInflater.inflate(layout, null,false);
 
         view.setTag(tag);
-		view.setVisibility(View.GONE);
-		
-		((TextView)view.findViewById(R.id.exception_title)).setText(title);
-		((TextView)view.findViewById(R.id.exception_message)).setText(description);
+        view.setVisibility(View.GONE);
+
+        ((TextView)view.findViewById(R.id.exception_title)).setText(title);
+        ((TextView)view.findViewById(R.id.exception_message)).setText(description);
         View buttonView = view.findViewById(R.id.exception_button);
         if(buttonView!=null)
             buttonView.setOnClickListener(this.mClickListener);
 
-		return view;
-	}
-	/**
-	 * @see <a href="http://developer.android.com/design/building-blocks/progress.html#activity">Android Design Guidelines for Activity Circles</a>
-	 * @deprecated This method has been deprecated because it does not adhere to the Android design guidelines. Activity circle's should not display any text. 
-     *	
-	 */
-	public void setLoadingMessage(String message){
+        return view;
+    }
+    /**
+     *
+     * @see <a href="http://developer.android.com/design/building-blocks/progress.html#activity">Android Design Guidelines for Activity Circles</a>
+     * @deprecated This method has been deprecated because it does not adhere to the Android design guidelines. Activity circle's should not display any text.
+     *
+     */
+    public void setLoadingMessage(String message){
         ((TextView)mDefaultViews.get(1).findViewById(R.id.exception_message)).setText(message);
     }
     public void setInternetOffMessage(String message){
@@ -243,5 +258,20 @@ public class DynamicBox {
         customView.setVisibility(View.GONE);
         mCustomViews.add(customView);
         mContainer.addView(customView);
+    }
+    private class Clonner{
+        private View mView;
+
+        public Clonner(View view){
+            this.setmView(view);
+        }
+
+        public View getmView() {
+            return mView;
+        }
+
+        public void setmView(View mView) {
+            this.mView = mView;
+        }
     }
 }
