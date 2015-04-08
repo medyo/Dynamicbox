@@ -31,12 +31,10 @@ __Supports:__
 - `RelativeLayout`
 - `ScrollView`
 
-Including in your project : Gradle
+Including in your project : Maven Central
 ---------------------
 
-```dependencies {
-      compile project(':DynamicBox')
-   }```
+```compile 'com.github.medyo:dynamicbox:1.0@aar'```
 
 Usage
 ---------------------

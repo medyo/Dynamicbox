@@ -5,18 +5,23 @@ repositories {
 }
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+    compileSdkVersion 21
+    buildToolsVersion "19.1.0"
 
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 20
     }
     buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
     }
 }
 
 dependencies {
+    compile 'com.android.support:appcompat-v7:+'
     compile project(':DynamicBox')
-    compile 'com.android.support:appcompat-v7:20.+'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
