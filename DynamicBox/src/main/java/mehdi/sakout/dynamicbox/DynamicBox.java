@@ -47,7 +47,7 @@ public class DynamicBox {
     private final String MESSAGE_FAILURE 	 = "An error has occurred, retry again";
     private final String TITLE_FAILURE 	     = "Error";
 
-    private final String[] mSupportedAbsListViews = new String[]{"listview","gridview","expandablelistView"};
+    private final String[] mSupportedAbsListViews = new String[]{"listview","gridview","expandablelistview"};
     private final String[] mSupportedViews = new String[]{"linearlayout","relativelayout","scrollview"};
 
     public DynamicBox(Context context, View targetView){
