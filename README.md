@@ -85,12 +85,13 @@ box.addCustomView(customView,"greenmonster");
 box.showCustomView("greenmonster");
 ```  
 
-**To set Loading Message **  
+**To set Loading Message**
 ```
 box.setLoadingMessage("Loading your music ...");
 ```
+or by overriding [strings.xml variables](DynamicBoxExample/src/main/res/values/strings.xml)
 
-See the example project for more details : [Sample](raw/master/DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
+See the example project for more details : [Sample](DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
 
 Apps using DynamicBox  
 ---------------------   
