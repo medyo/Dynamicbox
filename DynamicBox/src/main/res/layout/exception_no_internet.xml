@@ -13,7 +13,7 @@
 
 
         <LinearLayout
-            android:id="@+id/exception_Wrapper"
+            android:id="@+id/exception_wrapper"
             android:layout_width ="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -28,12 +28,12 @@
                 style="@style/exception.title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/empty_string" />
+                android:text="@string/dynamicbox_internet_off_title" />
 
             <TextView
                 android:id="@+id/exception_message"
                 style="@style/exception.message"
-                android:text="@string/empty_string" />
+                android:text="@string/dynamicbox_internet_off_message" />
 
 
         </LinearLayout>
@@ -41,9 +41,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/retry"
+            android:text="@string/dynamicbox_retry"
             android:id="@+id/exception_button"
-            android:layout_below="@+id/exception_Wrapper"
+            android:layout_below="@+id/exception_wrapper"
             style="@style/exception.button"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
