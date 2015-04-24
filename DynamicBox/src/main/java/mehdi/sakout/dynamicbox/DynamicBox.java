@@ -36,19 +36,8 @@ public class DynamicBox {
     private final String TAG_LOADING_CONTENT =  "LOADING_CONTENT";
     private final String TAG_OTHER_EXCEPTION =  "OTHER_EXCEPTION";
 
-    // Default Strings
-    private final String MESSAGE_LOADING	 =	"";
-    private final String TITLE_LOADING	     =	"Loading";
-
-    private final String MESSAGE_NO_INTERNET = "Internet is off, please enable it";
-    private final String TITLE_NO_INTERNET   = "Error";
-
-
-    private final String MESSAGE_FAILURE 	 = "An error has occurred, retry again";
-    private final String TITLE_FAILURE 	     = "Error";
-
     private final String[] mSupportedAbsListViews = new String[]{"listview","gridview","expandablelistview"};
-    private final String[] mSupportedViews = new String[]{"linearlayout","relativelayout","scrollview"};
+    private final String[] mSupportedViews = new String[]{"linearlayout","relativelayout", "framelayout", "scrollview"};
 
     public DynamicBox(Context context, View targetView){
         this.mContext 		= context;
@@ -119,9 +108,9 @@ public class DynamicBox {
     }
 
     private void setDefaultViews(){
-        View mLayoutInternetOff = initView(R.layout.exception_no_internet,TAG_INTERNET_OFF,TITLE_NO_INTERNET,MESSAGE_NO_INTERNET);
-        View mLayoutLoadingContent = initView(R.layout.exception_loading_content,TAG_LOADING_CONTENT,TITLE_LOADING,MESSAGE_LOADING);
-        View mLayoutOther = initView(R.layout.exception_failure,TAG_OTHER_EXCEPTION,TITLE_FAILURE,MESSAGE_FAILURE);
+        View mLayoutInternetOff = initView(R.layout.exception_no_internet,TAG_INTERNET_OFF);
+        View mLayoutLoadingContent = initView(R.layout.exception_loading_content,TAG_LOADING_CONTENT);
+        View mLayoutOther = initView(R.layout.exception_failure,TAG_OTHER_EXCEPTION);
 
         mDefaultViews.add(0,mLayoutInternetOff);
         mDefaultViews.add(1,mLayoutLoadingContent);
@@ -204,14 +193,12 @@ public class DynamicBox {
      * @param tag Layout Tag
      * @return View
      */
-    private View initView(int layout, String tag, String title, String description){
+    private View initView(int layout, String tag){
         View view = mInflater.inflate(layout, null,false);
 
         view.setTag(tag);
         view.setVisibility(View.GONE);
 
-        ((TextView)view.findViewById(R.id.exception_title)).setText(title);
-        ((TextView)view.findViewById(R.id.exception_message)).setText(description);
         View buttonView = view.findViewById(R.id.exception_button);
         if(buttonView!=null)
             buttonView.setOnClickListener(this.mClickListener);
