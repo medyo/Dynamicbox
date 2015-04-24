@@ -3,6 +3,16 @@
 
     <string name="app_name">DynamicBox</string>
     <string name="empty_string">empty</string>
-    <string name="retry">Retry</string>
+    <string name="dynamicbox_retry">Retry</string>
+
+    <string name="dynamicbox_loading_title"></string>
+    <string name="dynamicbox_loading_message"></string>
+
+    <string name="dynamicbox_internet_off_title">Error</string>
+    <string name="dynamicbox_internet_off_message">Internet is off, please enable it</string>
+
+    <string name="dynamicbox_exception_title">Error</string>
+    <string name="dynamicbox_exception_message">An error has occurred, retry again</string>
+
 
 </resources>
