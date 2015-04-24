@@ -30,6 +30,7 @@ __Supports:__
 - `LinearLayout`
 - `RelativeLayout`
 - `ScrollView`
+- `FrameLayout`
 
 Including in your project : Maven Central
 ---------------------
