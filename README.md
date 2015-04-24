@@ -89,7 +89,7 @@ box.showCustomView("greenmonster");
 ```
 box.setLoadingMessage("Loading your music ...");
 ```
-or by overriding [strings.xml variables](DynamicBoxExample/src/main/res/values/strings.xml)
+or by overriding [strings.xml variables](DynamicBox/src/main/res/values/strings.xml)
 
 See the example project for more details : [Sample](DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
 
