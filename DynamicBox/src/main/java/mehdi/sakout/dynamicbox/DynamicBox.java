@@ -47,16 +47,17 @@ public class DynamicBox {
         this.mCustomViews 	= new ArrayList<View>();
         this.mDefaultViews	= new ArrayList<View>();
 
-        String type = mTargetView.getClass().getName().substring(mTargetView.getClass().getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
-        Class superClazz = mTargetView.getClass().getSuperclass();
-        String superType = superClazz.getName().substring(superClazz.getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
+        Class viewClass = mTargetView.getClass();
+        Class superViewClass = viewClass.getSuperclass();
+        String viewType = viewClass.getName().substring(viewClass.getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
+        String superViewType = superViewClass.getName().substring(superViewClass.getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
 
-        if(Arrays.asList(mSupportedAbsListViews).contains(type)|| Arrays.asList(mSupportedAbsListViews).contains(superType))
+        if(Arrays.asList(mSupportedAbsListViews).contains(viewType)|| Arrays.asList(mSupportedAbsListViews).contains(superViewType))
             initializeAbsListView();
-        else if(Arrays.asList(mSupportedViews).contains(type)|| Arrays.asList(mSupportedViews).contains(superType))
+        else if(Arrays.asList(mSupportedViews).contains(viewType)|| Arrays.asList(mSupportedViews).contains(superViewType))
             initializeViewContainer();
         else
-            throw new IllegalArgumentException("TargetView type is not supported !");
+            throw new IllegalArgumentException("TargetView type ["+superViewType+"] is not supported !");
 
     }
 
@@ -68,16 +69,17 @@ public class DynamicBox {
         this.mCustomViews 	= new ArrayList<View>();
         this.mDefaultViews	= new ArrayList<View>();
 
-        String type = mTargetView.getClass().getName().substring(mTargetView.getClass().getName().lastIndexOf('.') + 1).toLowerCase(Locale.getDefault());
-        Class superClazz = mTargetView.getClass().getSuperclass();
-        String superType = superClazz.getName().substring(superClazz.getName().lastIndexOf('.') + 1).toLowerCase(Locale.getDefault());
+        Class viewClass = mTargetView.getClass();
+        Class superViewClass = viewClass.getSuperclass();
+        String viewType = viewClass.getName().substring(viewClass.getName().lastIndexOf('.') + 1).toLowerCase(Locale.getDefault());
+        String superViewType = superViewClass.getName().substring(superViewClass.getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
 
-        if (Arrays.asList(mSupportedAbsListViews).contains(type) || Arrays.asList(mSupportedAbsListViews).contains(superType))
+        if(Arrays.asList(mSupportedAbsListViews).contains(viewType)|| Arrays.asList(mSupportedAbsListViews).contains(superViewType))
             initializeAbsListView();
-        else if (Arrays.asList(mSupportedViews).contains(type) || Arrays.asList(mSupportedViews).contains(superType))
+        else if(Arrays.asList(mSupportedViews).contains(viewType)|| Arrays.asList(mSupportedViews).contains(superViewType))
             initializeViewContainer();
         else
-            throw new IllegalArgumentException("ViewId type is not supported !");
+            throw new IllegalArgumentException("TargetView type ["+superViewType+"] is not supported !");
 
     }
 
