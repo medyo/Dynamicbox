@@ -64,7 +64,7 @@ public class DynamicBox {
 
         if(Arrays.asList(mSupportedAbsListViews).contains(type)|| Arrays.asList(mSupportedAbsListViews).contains(superType))
             initializeAbsListView();
-        else if(Arrays.asList(mSupportedViews).contains(type)|| Arrays.asList(mSupportedAbsListViews).contains(superType))
+        else if(Arrays.asList(mSupportedViews).contains(type)|| Arrays.asList(mSupportedViews).contains(superType))
             initializeViewContainer();
         else
             throw new IllegalArgumentException("TargetView type is not supported !");
@@ -85,7 +85,7 @@ public class DynamicBox {
 
         if (Arrays.asList(mSupportedAbsListViews).contains(type) || Arrays.asList(mSupportedAbsListViews).contains(superType))
             initializeAbsListView();
-        else if (Arrays.asList(mSupportedViews).contains(type) || Arrays.asList(mSupportedAbsListViews).contains(superType))
+        else if (Arrays.asList(mSupportedViews).contains(type) || Arrays.asList(mSupportedViews).contains(superType))
             initializeViewContainer();
         else
             throw new IllegalArgumentException("ViewId type is not supported !");
