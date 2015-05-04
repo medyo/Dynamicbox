@@ -13,10 +13,13 @@ The philosophy behind this library is to improve the UX through informing the us
 Screenshots
 ---
  
-![Popcorn Screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_popcorn_loading.png)
-![Google play screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_gplay_no_internet.png)
-![Slack screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_slack_loading.png)
-![Gmail screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_gmail_no_messages.png)
+<img src="https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_popcorn_loading.png" alt="Popcorn Screen shot" width="250">
+
+<img src="https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_gplay_no_internet.png" alt="Google play screen shot" width="250">
+
+<img src="https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_slack_loading.png" alt="Slack screen shot" width="250">
+
+<img src="https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_gmail_no_messages.png" alt="Gmail screen shot" width="250">
 
 __Supports:__
 
