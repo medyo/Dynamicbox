@@ -27,6 +27,7 @@ __Supports:__
 - `RelativeLayout`
 - `ScrollView`
 - `FrameLayout`
+- `or any view type overriding from one of these`
 
 Including in your project : Maven Central
 ---------------------
@@ -95,7 +96,7 @@ Please refer to [styles.xml](DynamicBox/src/main/res/values/styles.xml)
 **To Override Default Layouts**
 Please refer to [res/layouts](DynamicBox/src/main/res/layout/)
 
-See the example project for more details : [Sample](DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
+**See the example project for more details** [Sample](DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
 
 Apps using DynamicBox  
 ---------------------   
