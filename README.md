@@ -13,11 +13,10 @@ The philosophy behind this library is to improve the UX through informing the us
 Screenshots
 ---
  
-![demo 1](https://raw.github.com/medyo/dynamicbox/master/screenshots/1.png)
-![demo 4](https://raw.github.com/medyo/dynamicbox/master/screenshots/4.png)
-![demo 5](https://raw.github.com/medyo/dynamicbox/master/screenshots/5.png)
-![demo 2](https://raw.github.com/medyo/dynamicbox/master/screenshots/2.png)
-![demo 3](https://raw.github.com/medyo/dynamicbox/master/screenshots/3.png)
+![Popcorn Screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_popcorn_loading.png)
+![Google play screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_gplay_no_internet.png)
+![Slack screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_slack_loading.png)
+![Gmail screen shot](https://raw.github.com/medyo/dynamicbox/master/screenshots/demo_gmail_no_messages.png)
 
 __Supports:__
 
@@ -30,11 +29,12 @@ __Supports:__
 - `LinearLayout`
 - `RelativeLayout`
 - `ScrollView`
+- `FrameLayout`
 
 Including in your project : Maven Central
 ---------------------
 
-```compile 'com.github.medyo:dynamicbox:1.0@aar'```
+```compile 'com.github.medyo:dynamicbox:1.1@aar'```
 
 Usage
 ---------------------
@@ -84,12 +84,21 @@ box.addCustomView(customView,"greenmonster");
 box.showCustomView("greenmonster");
 ```  
 
-**To set Loading Message **  
+**To set Loading Message**
 ```
 box.setLoadingMessage("Loading your music ...");
 ```
 
-See the example project for more details : [Sample](raw/master/DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
+**To Override Strings**
+Please refer to [strings.xml variables](DynamicBox/src/main/res/values/strings.xml)
+
+**To Override Default style**
+Please refer to [styles.xml](DynamicBox/src/main/res/values/styles.xml)
+
+**To Override Default Layouts**
+Please refer to [res/layouts](DynamicBox/src/main/res/layout/)
+
+See the example project for more details : [Sample](DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
 
 Apps using DynamicBox  
 ---------------------   

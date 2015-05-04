@@ -1,7 +1,4 @@
-<resources>
-
-    <style name="AppBaseTheme" parent="android:Theme.Holo"></style>
-    <style name="AppTheme" parent="AppBaseTheme"></style>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="exception"></style>
     <style name="exception.title">
@@ -11,6 +8,7 @@
         <item name="android:layout_marginBottom">5dip</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/dynamicbox_internet_off_title</item>
     </style>
 
     <style name="exception.message">
@@ -20,6 +18,7 @@
         <item name="android:layout_marginTop">0dip</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/dynamicbox_internet_off_message</item>
     </style>
 
     <style name="exception.button">

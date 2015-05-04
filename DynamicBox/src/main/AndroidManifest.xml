@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mehdi.sakout.dynamicbox"
-    android:versionCode="1"
-    android:versionName="1.0">
-
-    <application android:allowBackup="true"
-        />
+    android:versionCode="2"
+    android:versionName="1.1">
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="8"/>
 </manifest>
