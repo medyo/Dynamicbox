@@ -88,7 +88,15 @@ box.showCustomView("greenmonster");
 ```
 box.setLoadingMessage("Loading your music ...");
 ```
-or by overriding [strings.xml variables](DynamicBox/src/main/res/values/strings.xml)
+
+**To Override Strings**
+Please refer to [strings.xml variables](DynamicBox/src/main/res/values/strings.xml)
+
+**To Override Default style**
+Please refer to [styles.xml](DynamicBox/src/main/res/values/styles.xml)
+
+**To Override Default Layouts**
+Please refer to [res/layouts](DynamicBox/src/main/res/layout/)
 
 See the example project for more details : [Sample](DynamicBoxExample/src/main/java/mehdi/sakout/dynamicboxexample/)
 
