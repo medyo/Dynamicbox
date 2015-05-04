@@ -48,10 +48,12 @@ public class DynamicBox {
         this.mDefaultViews	= new ArrayList<View>();
 
         String type = mTargetView.getClass().getName().substring(mTargetView.getClass().getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
+        Class superClazz = mTargetView.getClass().getSuperclass();
+        String superType = superClazz.getName().substring(superClazz.getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
 
-        if(Arrays.asList(mSupportedAbsListViews).contains(type))
+        if(Arrays.asList(mSupportedAbsListViews).contains(type)|| Arrays.asList(mSupportedAbsListViews).contains(superType))
             initializeAbsListView();
-        else if(Arrays.asList(mSupportedViews).contains(type))
+        else if(Arrays.asList(mSupportedViews).contains(type)|| Arrays.asList(mSupportedViews).contains(superType))
             initializeViewContainer();
         else
             throw new IllegalArgumentException("TargetView type is not supported !");
@@ -66,11 +68,13 @@ public class DynamicBox {
         this.mCustomViews 	= new ArrayList<View>();
         this.mDefaultViews	= new ArrayList<View>();
 
-        String type = mTargetView.getClass().getName().substring(mTargetView.getClass().getName().lastIndexOf('.')+1).toLowerCase(Locale.getDefault());
+        String type = mTargetView.getClass().getName().substring(mTargetView.getClass().getName().lastIndexOf('.') + 1).toLowerCase(Locale.getDefault());
+        Class superClazz = mTargetView.getClass().getSuperclass();
+        String superType = superClazz.getName().substring(superClazz.getName().lastIndexOf('.') + 1).toLowerCase(Locale.getDefault());
 
-        if(Arrays.asList(mSupportedAbsListViews).contains(type))
+        if (Arrays.asList(mSupportedAbsListViews).contains(type) || Arrays.asList(mSupportedAbsListViews).contains(superType))
             initializeAbsListView();
-        else if(Arrays.asList(mSupportedViews).contains(type))
+        else if (Arrays.asList(mSupportedViews).contains(type) || Arrays.asList(mSupportedViews).contains(superType))
             initializeViewContainer();
         else
             throw new IllegalArgumentException("ViewId type is not supported !");
