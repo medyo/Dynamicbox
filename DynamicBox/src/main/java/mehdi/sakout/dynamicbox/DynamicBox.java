@@ -37,7 +37,7 @@ public class DynamicBox {
     private final String TAG_OTHER_EXCEPTION =  "OTHER_EXCEPTION";
 
     private final String[] mSupportedAbsListViews = new String[]{"listview","gridview","expandablelistview"};
-    private final String[] mSupportedViews = new String[]{"linearlayout","relativelayout", "framelayout", "scrollview"};
+    private final String[] mSupportedViews = new String[]{"linearlayout","relativelayout", "framelayout", "scrollview", "recyclerview", "viewgroup"};
 
     public DynamicBox(Context context, View targetView){
         this.mContext 		= context;
