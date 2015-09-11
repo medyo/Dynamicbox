@@ -27,12 +27,14 @@ __Supports:__
 - `RelativeLayout`
 - `ScrollView`
 - `FrameLayout`
+- `RecyclerView`
+- `ViewGroup`
 - `or any view type overriding from one of these`
 
 Including in your project : Maven Central
 ---------------------
 
-```compile 'com.github.medyo:dynamicbox:1.1@aar'```
+```compile 'com.github.medyo:dynamicbox:1.2@aar'```
 
 Usage
 ---------------------
