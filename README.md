@@ -1,5 +1,8 @@
 Dynamicbox
 ========== 
+
+# Deprecated, Please refer the new implementation at: https://github.com/medyo/StateViews
+
 ![Icon](https://raw.github.com/medyo/dynamicbox/master/screenshots/cat-box-icon.png "Dynamic Box")  
 
 DynamicBox is a library which inflates custom layouts to indicate : 
